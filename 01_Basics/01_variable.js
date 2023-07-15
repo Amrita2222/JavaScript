@@ -8,9 +8,9 @@ let accountState;    // Undefined because we didn't declear any value for it.
 
 accountEmail = "rg@gmail.com"
 accountPassword = "12"
-accountCity = "Delhi"
+accountCity = "Delhi";
 
-console.log(accountId);
+// console.log(accountId);
 
 /*
 Prefer not to use var
