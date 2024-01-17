@@ -1,0 +1,3 @@
+// Terniary Operator
+
+// condition ? true
