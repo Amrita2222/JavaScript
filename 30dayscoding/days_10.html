@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        color: aliceblue;
+    }
+    .grid{
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);
+       
+        background: #000;
+       
+    }
+    .grid > div{
+        background: #302f2f;
+      
+        width: 98%;
+        text-align: center;
+        margin: 1% auto;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+</style>
+<body>
+    <div class="grid">
+        <div> 
+            <!-- Task 1: Add a click event listener to a button that changes the text content of a paragraph. -->
+             <button id="btn">Click Me</button>
+             <p id="paragraph">This is a paragraph.</p>
+        </div>
+
+        <div>
+            <!--Task 2.  Add a double-click event listener to an image that toggles its visibility. -->
+             <img id="image" src="https://testbook.com/assets/img/brand/logo-small.png" alt="Placeholder Image">
+        </div>
+
+        <div id="bgcolor"></div>
+
+        <div>
+            <!-- // Task 5: Add a keydown event listener to an input field that logs the key pressed to the console. -->
+             <input type="text" id="inputField">
+             <p id="keyLog"></p>
+        </div>
+        <div>
+            <!-- Task 6: Add a keyup event listener to an input field that displays the current value in a paragraph. -->
+             <input type="text" id="inputField2">
+             <p id="valueDisplay"></p>
+        </div>
+
+        <div>
+            <!-- Task 7: Add a submit event listener to a form that prevents the default submission and logs the form data to the console. -->
+            <form action="" itemref="" id="formevent">
+                <input type="text" id="name">
+                <input type="email" id="email">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+  
+    <div>
+        <!-- // Task 8: Add a change event listener to a select dropdown that displays the selected value in a paragraph. -->
+         <select id="Dropdown">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+    </div>
+</div>
+    <script src="days_10.js"></script>
+</body>
+</html>

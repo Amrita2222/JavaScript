@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter name" required><br><br>
+
+    <label for="session">Session</label>
+    <input type="text" id="session" name="session" placeholder="Enter session" required><br><br>
+
+    <label for="gender">Gender</label>
+    <input type="radio" name="gender" value="male" id="male"> Male
+    <input type="radio" name="gender" value="female" id="female"> Female
+    <input type="radio" name="gender" value="other" id="other"> Other
+    <br><br>
+
+    <button onclick="sendData()">Send Data</button>
+    <div id="showoutput"></div>
+
+    <script>
+        async function sendData() {
+            try {
+              
+                const name = document.getElementById('name').value;
+                const session = document.getElementById('session').value;
+                const gender = document.querySelector('input[name="gender"]:checked').value;
+                console.log(gender);
+                
+                const record = {
+                    name,
+                    session,
+                    gender
+                };
+
+                
+                const response = await fetch("/savedemrecod" ,{ 
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(record)
+                });
+
+               
+
+               
+
+            } catch (error) {
+                console.error('Error:', error.message);
+                document.getElementById('showoutput').innerText = `Failed to fetch: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

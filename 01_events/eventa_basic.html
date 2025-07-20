@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>image </h2>
+    <ul id="images">
+        <li id="owl_01">
+            <img width="200px" height='200px' src="https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*" alt="">
+        </li>
+        <li id="owl_02">
+            <img  width="200px"  height='200px' src="https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*" alt="">
+        </li>
+        <li id="owl_03">
+            <img width="200px"  height='200px' src="https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*" alt="">
+        </li>
+        <li id="owl_04">
+            <img width="200px" height='200px' src="https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*" alt="">
+        </li>
+        <li id="owl_05">
+            <img width="200px"  height='200px' src="https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*" alt="">
+        </li>
+        <li id="owl_06">
+            <img width="200px"  height='200px' src="https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*" alt="">
+        </li>
+        <li><a href="https://www.google.com/" id="google">google</a></li>
+    </ul>
+</body>
+<script>
+    // attachEvent
+    // jQuery - on
+    document.getElementById('owl_01').addEventListener('click', function(e) {
+        console.log("clicked inside the url");
+    });
+
+    document.getElementById('owl_02').addEventListener("click", function (e) {
+        console.log("owl clicked");
+    });
+
+    document.getElementById('google').addEventListener('click', function(e){
+      
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('clicked google');
+    })
+
+    // type, timestamp, defaultPrevented
+    //  target, toElement, srcElement, currentTrget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlKey, shiftkey, keyCode
+    
+    /* event.propagation has 2 context
+    1. event bubbling (use in market, bottom to top run)
+    2. event Capturing (top to bottom run)
+    */
+
+
+    document.querySelector("#images").addEventListener('click', function (e) {
+        // console.log('event captured');
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let remove= e.target.parentNode;
+            remove.remove();
+        }
+       
+        // remove.parentNode.removeChild(remove);
+        
+    })
+</script>
+</html>

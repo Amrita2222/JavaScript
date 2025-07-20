@@ -6,14 +6,11 @@
 // let bignumber = integernumber[13]
 // console.log(bignumber);
 // console.log(length);
-
 /*
 integernumber.reverse();
  let bignumber =integernumber[0];
  console.log(bignumber);
 */
-
-
 
 
 function missing(arr){
@@ -22,13 +19,13 @@ function missing(arr){
             let minimum = Math.min(...arr);
             let maxmium = Math.max(...arr);
             
-            for(let i= minimum; i<maxmium; i++){
-                if(arr.indexOf(i) <0){
-                      missingnumber.push(i);
-                }
+     for(let i= minimum; i<maxmium; i++){
+         if(arr.indexOf(i) <0){
+            missingnumber.push(i);
+         }
               
-            }
-            return missingnumber;
-        }
+    }
+     return missingnumber;
+}
         
         console.log(missing([1, 2, 3, 5]));

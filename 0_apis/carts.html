@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Profile Finder</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        header{
+            background-color: rgb(25, 146, 228);
+            color: white;
+            padding: 1% 5%;
+        }
+        .container_col1{
+            background-color: #fbfcfd;
+            border: 1px solid #eee;
+            padding: 1% 5%;
+            border-radius: 5px;
+            margin: 2% 3%;
+        }
+        .container_col2{
+            display: flex;
+            padding: 2%;
+            border-radius: 4px;
+            border: #eee 1px solid;
+            margin: 2% 3%;
+        }
+        img{
+            height: 200px;
+            width: 200px;
+            border-radius: 5%;
+            border: #eee 2px solid;
+        }
+        input{
+            width: 100%;
+            padding: 1.2%;
+            border-radius: 4px;
+            margin: 2% 0 0;
+            border: 1px solid #eee;
+        }
+        .image_col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button{
+            padding: 7px 15px;
+            margin-top: 5%;
+            background-color: rgb(25, 146, 228);
+            color: white;
+            border-radius: 1rem;
+            border: none;
+        }
+       
+       .content{
+            margin-left: 3rem;
+            width: 100%;
+        }
+       .content p{
+            padding: 2% 4%;
+            color: #000;
+            font-size: 14px;
+            font-weight: 500;
+            border-left: 3px solid #5f87db;
+            border-radius: 2px;
+            margin-top: 4%;
+           
+
+        }
+       .content p span{
+            color: #424141cc;
+        }
+        .level{
+            display: flex;
+            margin-left: 3rem;
+              gap: 4%;
+              width: 100%;
+        }
+       .level p{
+            background-color: rgb(85, 136, 204);
+            color: white;
+            padding: 2px 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <img  width= '400px' height='200px' src="https://t3.ftcdn.net/jpg/01/38/81/76/360_F_138817681_4FCgB89eGIBi7W7i0g0mPJHsg9ZuZyzU.jpg" alt="">
+        <h4>Welcome</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, ipsum.</p>
+        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, magni dolorum. Veritatis?</b>
+    </div> -->
+
+    <header>Github Finder</header>
+
+    <div class="container_col1">
+        <h2>Search Github Users</h2>
+        <br>
+        <p>Enter a username to search for use profile and respositories</p>
+    
+        <input type="text" name="" id="inputText" placeholder="Enter Usernaname">
+        <button type="submit" style="cursor: pointer">Search</button>
+    </div>
+
+    <div class="container_col2">
+
+        <div class="image_col">
+            <img src="" alt="">
+            <button>View Profile</button>
+        </div>
+
+
+        <div class="container_col3">
+            <div class="level">
+                <p>Public_Reopository : <span id="public_repos"></span></p>
+                <p>Public_Gits : <span class="public_gits"></span></p>
+                <p>Followers : <span class="followers"></span></p>
+                <p>Following:  <span class="Following"></span></p>
+            </div>
+            <br>
+           <div class="content">
+            <p>Comany: <span class="company"></span></p>
+            <p>Website/Blog : <span class="website"></span></p>
+            <p>Location: <span class="location"></span></p>
+            <p>Memeber Since: <span class="member_since"></span></p>
+           </div>
+        </div>
+    </div>
+    <script src="carts.js"></script>
+</body>
+</html>
+
+

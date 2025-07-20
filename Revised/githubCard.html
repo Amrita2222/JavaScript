@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.card .stats {
+    margin-top: 20px;
+}
+
+.stats div {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.stats div span {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="profileCard">
+            <!-- Profile details will be injected here -->
+        </div>
+    </div>    
+</body>
+
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    // Replace with any GitHub username
+    const username = 'octocat';
+    const profileCard = document.getElementById('profileCard');
+
+    // Fetch user data from GitHub API
+    fetch(`https://api.github.com/users/${username}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'Not Found') {
+                profileCard.innerHTML = `<p>User not found!</p>`;
+            } else {
+                // Create profile card content
+                profileCard.innerHTML = `
+                    <img src="${data.avatar_url}" alt="${data.login}'s profile" class="profile-image">
+                    <h2>${data.name || data.login}</h2>
+                    <p>${data.bio || 'No bio available'}</p>
+                    <div class="stats">
+                        <div><span>Followers:</span> ${data.followers}</div>
+                        <div><span>Following:</span> ${data.following}</div>
+                        <div><span>Public Repos:</span> ${data.public_repos}</div>
+                        <div><span>Location:</span> ${data.location || 'Not available'}</div>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            profileCard.innerHTML = `<p>Error fetching data</p>`;
+            console.error('Error:', error);
+        });
+});
+
+</script>
+</html>
